@@ -3,9 +3,9 @@ package ru.geekbrains.javacore2.lesson1.obstacles;
 import ru.geekbrains.javacore2.lesson1.competitors.iChallengable;
 
 public class Water extends Obstacle {
-    private int distance;
+    private double distance;
 
-    public Water(int distance) {
+    public Water(double distance) {
         this.distance = distance;
     }
 

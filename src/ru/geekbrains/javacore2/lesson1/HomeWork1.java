@@ -13,25 +13,34 @@ import ru.geekbrains.javacore2.lesson1.obstacles.*;
 
 public class HomeWork1 {
     public static void main(String[] args) {
-        iChallengable[] ichallengable = {
-                new Human("Human","Bob", 5000, 1, 30),
-                new Child("Human","Andrey", 1000, 10, 50),
+        Team team = new Team("TyTy", new iChallengable[]{
                 new Cat("Cat","Barsic", 100, 2, 0),
-                new Cat("Cat","Vasia", 200, 2, 0),
-                new Dog("Dog","Sharic", 500, 0.6,10),
-                new Dog("Dog","Bobic", 300, 0.3,7)};
+                new Dog("Dog","Bobic", 300, 0.3,7),
+                new Human("Human","Bob", 5000, 1, 30),
+                new Child("Human","Andrey", 1000, 10, 50)});
 
-        Obstacle[] course = {new Cross(200), new Wall(0.5), new Water(10)};
+        Course course = new Course(new Obstacle[]{new Cross(200), new Wall(0.5), new Water(10)});
 
-        for (iChallengable c: ichallengable) {
-            for (Obstacle o: course) {
-                o.doIt(c);
-                if (!c.isOnDistance())break;
-            }System.out.println();
-        }
-        System.out.println("==========================");
-        for (iChallengable c: ichallengable) {
-            c.showResult();
-        }
+        course.doIt(team);
+        System.out.println();
+        team.info();
+//        Obstacle[] course = {new Cross(200), new Wall(0.5), new Water(10)};
+//              iChallengable[] ichallengable = {
+//                new Human("Human","Bob", 5000, 1, 30),
+//                new Child("Human","Andrey", 1000, 10, 50),
+//                new Cat("Cat","Barsic", 100, 2, 0),
+//                new Dog("Dog","Bobic", 300, 0.3,7)};
+
+
+//        for (iChallengable c: ichallengable) {
+//            for (Obstacle o: course) {
+//                o.doIt(c);
+//                if (!c.isOnDistance())break;
+//            }System.out.println();
+//        }
+//        System.out.println("==========================");
+//        for (iChallengable c: ichallengable) {
+//            c.showResult();
+//        }
     }
 }
